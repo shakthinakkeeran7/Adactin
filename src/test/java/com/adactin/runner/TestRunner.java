@@ -7,6 +7,7 @@ import org.openqa.selenium.WebDriver;
 
 import com.adactin.baseclass.BaseClass;
 import com.adactin.manager.FileReaderManager;
+import com.adactin.stepDefinition.Temp;
 
 import io.cucumber.junit.Cucumber;
 import io.cucumber.junit.CucumberOptions;
@@ -24,6 +25,7 @@ public class TestRunner {
 	public static void setUp() throws Throwable {
 		String browser = FileReaderManager.getInstance().getCrInstance().getBrowser();
 		driver = BaseClass.getBrowser(browser);
+		
 
 	}
 

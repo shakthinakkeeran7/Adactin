@@ -1,6 +1,5 @@
 package com.adactin.enums;
 
 public enum Context {
-	HotelName;
-
+	Hotel_Name;
 }

@@ -28,9 +28,10 @@ public class SelectHotelPageTestSteps extends BaseClass {
 	public void verify_that_hotel_displayed_is_the_same_as_selected_in_search_hotel_form() {
 
 		for (WebElement each : selectHotelPage.getHotelName()) {
-			String a = "d";
-			testContext.getScenarioContext().setContext(Context.HotelName, a);
-			Assert.assertEquals(a, getText(each));
+			
+			//testContext.getScenarioContext().setContext(Context.HotelName, a);
+			Assert.assertEquals(testContext.getScenarioContext().getContext(Context.Hotel_Name), getText(each));
+			System.out.println(getText(each));
 		}
 
 	}
