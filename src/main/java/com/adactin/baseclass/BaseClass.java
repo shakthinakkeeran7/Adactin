@@ -11,12 +11,15 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
+
 import com.github.dockerjava.api.model.Driver;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
 
 public class BaseClass {
 	public static WebDriver driver;
+
+	
 
 	public static WebDriver getBrowser(String browserName) {
 
@@ -140,8 +143,9 @@ public class BaseClass {
 		}
 	}
 	
-	public static void getText(WebElement element) {
-		element.getText();
+	public static String getText(WebElement element) {
+		
+		return element.getText();
 	}
 
 }

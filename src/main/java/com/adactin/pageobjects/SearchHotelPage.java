@@ -86,5 +86,8 @@ public class SearchHotelPage {
 
 	@FindBy(id = "checkin_span")
 	private WebElement CheckOutError;
+	
+	
+	
 
 }

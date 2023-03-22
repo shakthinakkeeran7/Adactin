@@ -5,11 +5,13 @@ import org.openqa.selenium.support.PageFactory;
 
 import com.adactin.pageobjects.LoginPage;
 import com.adactin.pageobjects.SearchHotelPage;
+import com.adactin.pageobjects.SelectHotelPage;
 
 public class PageObjectManager {
 	WebDriver driver;
 	LoginPage loginpage;
 	SearchHotelPage searchHotelPage;
+	SelectHotelPage selectHotelPage;
 
 	public PageObjectManager(WebDriver driver) {
 
@@ -32,4 +34,11 @@ public class PageObjectManager {
 		return searchHotelPage;
 	}
 
+	
+	public SelectHotelPage getSelectHotelPage() {
+		if (selectHotelPage == null) {
+			selectHotelPage = new SelectHotelPage(driver);
+		}
+		return selectHotelPage;
+	}
 }

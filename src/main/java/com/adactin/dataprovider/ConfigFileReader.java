@@ -32,6 +32,8 @@ public class ConfigFileReader {
 	}
 
 	public void getImplicitlyWait() {
+		
+		
 	}
 
 	public String getApplicationUrl() {
@@ -58,4 +60,8 @@ public class ConfigFileReader {
 	public void getTestDataResourcePath() {
 	}
 
+	
+	
+	
+	
 }
