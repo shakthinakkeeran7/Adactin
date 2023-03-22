@@ -11,15 +11,12 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
-
 import com.github.dockerjava.api.model.Driver;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
 
 public class BaseClass {
 	public static WebDriver driver;
-
-	
 
 	public static WebDriver getBrowser(String browserName) {
 
@@ -29,6 +26,7 @@ public class BaseClass {
 		option.addArguments("chrome.switches", "--disable-extensions");
 		option.addArguments("--disable-notifications");
 		option.addArguments("enable-automation");
+		option.addArguments("start-maximized");
 
 		DesiredCapabilities cap = new DesiredCapabilities();
 		cap.setCapability(ChromeOptions.CAPABILITY, option);
@@ -62,8 +60,7 @@ public class BaseClass {
 			e.printStackTrace();
 		}
 	}
-	
-	
+
 	public static void selectDropDownOption(WebElement element, String option, String value) {
 		try {
 			waitforElementVisiblity(element);
@@ -79,8 +76,7 @@ public class BaseClass {
 			e.printStackTrace();
 		}
 	}
-	
-	
+
 	public static boolean elementIsEnabled(WebElement element) {
 		try {
 			boolean enabled = element.isEnabled();
@@ -91,7 +87,7 @@ public class BaseClass {
 			throw new RuntimeException();
 		}
 	}
-	
+
 	public static boolean elementIsDisplayed(WebElement element) {
 		boolean displayed = false;
 		try {
@@ -105,7 +101,6 @@ public class BaseClass {
 		return displayed;
 	}
 
-	
 	public static void inputValuestoWebelement(WebElement element, String value) {
 		try {
 			waitforElementVisiblity(element);
@@ -130,7 +125,7 @@ public class BaseClass {
 			e.printStackTrace();
 		}
 	}
-	
+
 	public static void clearonWebelement(WebElement element) {
 		try {
 			waitforElementVisiblity(element);
@@ -142,10 +137,18 @@ public class BaseClass {
 			e.printStackTrace();
 		}
 	}
-	
+
 	public static String getText(WebElement element) {
-		
+
 		return element.getText();
 	}
 
+	public static String getAttribute(WebElement element, String AttributeName) {
+		
+
+			String attributeValue = element.getAttribute(AttributeName);
+			return attributeValue;	
+			
+	
+	}
 }

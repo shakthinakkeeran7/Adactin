@@ -31,7 +31,7 @@ public class SearchHotelPageTestSteps extends BaseClass {
 	@When("Select hotel as in test data {string}")
 	public void select_hotel_as_in_test_data(String Hotels) {
 		selectDropDownOption(searchHotelPage.getHotels(), "visibletext", Hotels);
-		testContext.getScenarioContext().setContext(Context.Hotel_Name, Hotels);
+		testContext.getScenarioContext().setContext(Context.HOTEL_NAME, Hotels);
 	}
 
 	@When("Select Room Type as in test data {string}")
@@ -58,15 +58,23 @@ public class SearchHotelPageTestSteps extends BaseClass {
 			String CheckOutDate) {
 		clearonWebelement(searchHotelPage.getCheckInDate());
 		inputValuestoWebelement(searchHotelPage.getCheckInDate(), CheckInDate);
+		
 		clearonWebelement(searchHotelPage.getCheckOutDate());
 		inputValuestoWebelement(searchHotelPage.getCheckOutDate(), CheckOutDate);
 
-	}
+		testContext.getScenarioContext().setContext(Context.CHECK_IN_DATE, CheckInDate);
+		testContext.getScenarioContext().setContext(Context.CHECK_OUT_DATES, CheckOutDate);
 
+	}
+	@Then("Click on search button")
+	public void click_on_search_button() {
+		
+		clickonWebelement(searchHotelPage.getSubmit());
+		
+	}
 	@Then("verify that system gives an error saying {string}")
 	public void verify_that_system_gives_an_error_saying(String ErrorMessage) {
 
-		clickonWebelement(searchHotelPage.getSubmit());
 		Assert.assertEquals(ErrorMessage, getText(searchHotelPage.getCheckIn_Error()));
 
 	}

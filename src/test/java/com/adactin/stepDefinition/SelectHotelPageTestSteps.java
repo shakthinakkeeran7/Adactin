@@ -1,5 +1,8 @@
 package com.adactin.stepDefinition;
 
+import java.util.List;
+
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.testng.Assert;
@@ -22,17 +25,21 @@ public class SelectHotelPageTestSteps extends BaseClass {
 		selectHotelPage = testContext.getPageObjectManager().getSelectHotelPage();
 	}
 
-	public static WebDriver driver = TestRunner.driver;
-
 	@Then("Verify that hotel displayed is the same as selected in search Hotel form")
-	public void verify_that_hotel_displayed_is_the_same_as_selected_in_search_hotel_form() {
-
-		for (WebElement each : selectHotelPage.getHotelName()) {
-			
-			//testContext.getScenarioContext().setContext(Context.HotelName, a);
-			Assert.assertEquals(testContext.getScenarioContext().getContext(Context.Hotel_Name), getText(each));
-			System.out.println(getText(each));
-		}
+	public void verify_that_hotel_displayed_is_the_same_as_selected_in_search_hotel_form() throws InterruptedException {
+		Assert.assertEquals(testContext.getScenarioContext().getContext(Context.HOTEL_NAME),
+				getAttribute(selectHotelPage.getHotelName(), "value"));
+		
 
 	}
+	
+	@Then("Verify that Check-in-date and Check-out-dates are the same as selected in search hotel form")
+	public void verify_that_check_in_date_and_check_out_dates_are_the_same_as_selected_in_search_hotel_form() {
+		Assert.assertEquals(testContext.getScenarioContext().getContext(Context.CHECK_IN_DATE),
+				getAttribute(selectHotelPage.getCheckInDate(), "value"));
+		Assert.assertEquals(testContext.getScenarioContext().getContext(Context.CHECK_OUT_DATES),
+				getAttribute(selectHotelPage.getCheckOutDate(), "value"));
+	
+	}
+
 }

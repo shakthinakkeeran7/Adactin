@@ -16,12 +16,27 @@ public class SelectHotelPage {
 		PageFactory.initElements(driver, this);
 	}
 	
-	@FindBy (xpath = "//input[contains(@id,'hotel_name') and @type='text']")
-	private List<WebElement> HotelName;
-
-	public List<WebElement> getHotelName() {
+	public WebElement getHotelName() {
 		return HotelName;
 	}
+
+	public WebElement getCheckInDate() {
+		return CheckInDate;
+	}
+
+	public WebElement getCheckOutDate() {
+		return CheckOutDate;
+	}
+
+	@FindBy (id = "hotel_name_0")
+	private WebElement HotelName;
+
+
+	@FindBy (id = "arr_date_0")
+	private WebElement CheckInDate;
+
+	@FindBy (id = "dep_date_0")
+	private WebElement CheckOutDate;
 	
 	
 } 

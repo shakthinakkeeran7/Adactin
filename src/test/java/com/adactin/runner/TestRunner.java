@@ -13,7 +13,12 @@ import io.cucumber.junit.Cucumber;
 import io.cucumber.junit.CucumberOptions;
 
 @RunWith(Cucumber.class)
-@CucumberOptions(features = "src/test/resources/feature", glue = "com.adactin.stepDefinition", dryRun = false, monochrome = true, stepNotifications = true
+@CucumberOptions(features = "src/test/resources/feature",
+glue = "com.adactin.stepDefinition",
+dryRun = false,
+monochrome = true,
+stepNotifications = true,
+tags = "@TC-105"
 
 )
 
