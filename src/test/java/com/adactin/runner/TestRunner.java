@@ -15,10 +15,13 @@ import io.cucumber.junit.CucumberOptions;
 @RunWith(Cucumber.class)
 @CucumberOptions(features = "src/test/resources/feature",
 glue = "com.adactin.stepDefinition",
+plugin = {
+		"com.aventstack.extentreports.cucumber.adapter.ExtentCucumberAdapter:",
+		"rerun:Report/FailedScenario.txt"},
 dryRun = false,
 monochrome = true,
-stepNotifications = true,
-tags = "@TC-105"
+stepNotifications = true
+//tags = "@TC-106"
 
 )
 

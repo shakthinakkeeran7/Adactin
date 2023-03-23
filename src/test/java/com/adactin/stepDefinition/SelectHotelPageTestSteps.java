@@ -29,17 +29,24 @@ public class SelectHotelPageTestSteps extends BaseClass {
 	public void verify_that_hotel_displayed_is_the_same_as_selected_in_search_hotel_form() throws InterruptedException {
 		Assert.assertEquals(testContext.getScenarioContext().getContext(Context.HOTEL_NAME),
 				getAttribute(selectHotelPage.getHotelName(), "value"));
-		
 
 	}
-	
+
 	@Then("Verify that Check-in-date and Check-out-dates are the same as selected in search hotel form")
 	public void verify_that_check_in_date_and_check_out_dates_are_the_same_as_selected_in_search_hotel_form() {
 		Assert.assertEquals(testContext.getScenarioContext().getContext(Context.CHECK_IN_DATE),
 				getAttribute(selectHotelPage.getCheckInDate(), "value"));
 		Assert.assertEquals(testContext.getScenarioContext().getContext(Context.CHECK_OUT_DATES),
 				getAttribute(selectHotelPage.getCheckOutDate(), "value"));
-	
+
 	}
+	
+	@Then("Verify that no of rooms reflected according to the no of rooms selected in search hotel page")
+	public void verify_that_no_of_rooms_reflected_according_to_the_no_of_rooms_selected_in_search_hotel_page() {
+	  throw new NullPointerException();
+		
+		
+	}
+
 
 }

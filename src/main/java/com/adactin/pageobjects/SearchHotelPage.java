@@ -60,6 +60,10 @@ public class SearchHotelPage {
 		return CheckOutError;
 	}
 
+	public WebElement getChildRoom() {
+		return ChildRoom;
+	}
+
 	@FindBy(id = "hotels")
 	private WebElement Hotels;
 
@@ -86,6 +90,12 @@ public class SearchHotelPage {
 
 	@FindBy(id = "checkin_span")
 	private WebElement CheckOutError;
+	
+	
+	@FindBy(id = "child_room")
+	private WebElement ChildRoom;
+	
+	
 	
 	
 	

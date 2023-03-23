@@ -66,3 +66,31 @@ Feature: Adactin Hotel Application
     And Click on search button
     Then Verify that Check-in-date and Check-out-dates are the same as selected in search hotel form
     
+    @TC-106
+    Scenario: To verify whether no of rooms entry in select Hotel page is same as the number of rooms selected in search hotel page
+    
+    Given Launch hotel reservation application using URL as in the test data
+    When Login to the application using "shakthinakkeeran" and "shakthinakkeeran" as in the test data
+    And Select location as in test data "New York"
+    And Select Room Type as in test data "Standard"
+    And Select hotel as in test data "Hotel Sunshine"
+    And Select Room type as in the test data "2 - Two"
+    And Select no of room as in test data "2 - Two"
+    And Enter check-in date later than check out date field as in test data "23/03/2023" and "25/03/2023"
+    And Select No of children as in test data "2 - Two"
+    And Click on search button
+    Then Verify that no of rooms reflected according to the no of rooms selected in search hotel page
+    
+    @TC-107
+    Scenario: To verify whether Room Type in Select Hotel page is same as Room type selected in search hotel page    
+    Given Launch hotel reservation application using URL as in the test data
+    When Login to the application using "shakthinakkeeran" and "shakthinakkeeran" as in the test data
+    And Select location as in test data "New York"
+    And Select Room Type as in test data "Standard"
+    And Select hotel as in test data "Hotel Sunshine"
+    And Select Room type as in the test data "2 - Two"
+    And Select no of room as in test data "2 - Two"
+    And Enter check-in date later than check out date field as in test data "23/03/2023" and "25/03/2023"
+    And Select No of children as in test data "2 - Two"
+    And Click on search button
+    Then Verify that room type reflected is the same as selected in search hotel page

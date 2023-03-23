@@ -28,6 +28,18 @@ public class SelectHotelPage {
 		return CheckOutDate;
 	}
 
+	public WebElement getNoOfDays() {
+		return NoOfDays;
+	}
+
+	public WebElement getRooms() {
+		return Rooms;
+	}
+
+	public WebElement getRoomType() {
+		return RoomType;
+	}
+
 	@FindBy (id = "hotel_name_0")
 	private WebElement HotelName;
 
@@ -38,5 +50,13 @@ public class SelectHotelPage {
 	@FindBy (id = "dep_date_0")
 	private WebElement CheckOutDate;
 	
+	@FindBy (id = "no_days_0")
+	private WebElement NoOfDays;
+	
+	@FindBy (id = "rooms_0")
+	private WebElement Rooms;
+	
+	@FindBy(id = "room_type_1")
+	private WebElement RoomType;
 	
 } 

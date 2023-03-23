@@ -12,7 +12,11 @@ import io.cucumber.junit.Cucumber;
 import io.cucumber.junit.CucumberOptions;
 
 @RunWith(Cucumber.class)
-@CucumberOptions(features = "src/test/resources/feature", glue = "com.adactin.stepDefinition", dryRun = true, monochrome = true, stepNotifications = true
+@CucumberOptions(features = "@Report/FailedScenario.txt",
+glue = "com.adactin.stepDefinition",
+dryRun = true,
+monochrome = true,
+stepNotifications = true
 
 )
 public class TestRunnerRerun {

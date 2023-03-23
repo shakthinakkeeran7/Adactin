@@ -58,7 +58,7 @@ public class SearchHotelPageTestSteps extends BaseClass {
 			String CheckOutDate) {
 		clearonWebelement(searchHotelPage.getCheckInDate());
 		inputValuestoWebelement(searchHotelPage.getCheckInDate(), CheckInDate);
-		
+
 		clearonWebelement(searchHotelPage.getCheckOutDate());
 		inputValuestoWebelement(searchHotelPage.getCheckOutDate(), CheckOutDate);
 
@@ -66,12 +66,20 @@ public class SearchHotelPageTestSteps extends BaseClass {
 		testContext.getScenarioContext().setContext(Context.CHECK_OUT_DATES, CheckOutDate);
 
 	}
+
 	@Then("Click on search button")
 	public void click_on_search_button() {
-		
+
 		clickonWebelement(searchHotelPage.getSubmit());
-		
+
 	}
+
+	@When("Select No of children as in test data {string}")
+	public void select_no_of_children_as_in_test_data(String ChildRoom) {
+		selectDropDownOption(searchHotelPage.getChildRoom(), "visibletext", ChildRoom);
+
+	}
+
 	@Then("verify that system gives an error saying {string}")
 	public void verify_that_system_gives_an_error_saying(String ErrorMessage) {
 
