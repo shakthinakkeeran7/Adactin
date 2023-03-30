@@ -11,7 +11,7 @@ public class TestContext {
 	public static WebDriver driver = TestRunner.driver;
 	private PageObjectManager pageObjectManager;
 	private ScenarioContext scenarioContext;
-	private WebDriverManager webDriverManager;
+	//private WebDriverManager webDriverManager;
 	
 	public TestContext(){
 		
@@ -19,9 +19,9 @@ public class TestContext {
 		scenarioContext = new ScenarioContext();
 	}
 	
-	public WebDriverManager getWebDriverManager() {
-		return webDriverManager;
-	}
+//	public WebDriverManager getWebDriverManager() {
+//		return webDriverManager;
+//	}
 	
 	public PageObjectManager getPageObjectManager() {
 		return pageObjectManager;
